@@ -13,9 +13,10 @@ on:
       kernel_source:
         description: "Select the kernel source"
         required: false
-        default: "unifreq"
+        default: "eWloYW8"
         type: choice
         options:
+          - eWloYW8
           - unifreq
           - codesnas
       kernel_version:
@@ -178,8 +179,8 @@ jobs:
         run: |
           # Create a docker mapping directory
           mkdir -p /builder/compile-kernel/{kernel,output}
-          ln -sf /builder/compile-kernel/kernel /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/compile-kernel/kernel
-          ln -sf /builder/compile-kernel/output /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/compile-kernel/output
+          ln -sf /builder/compile-kernel/kernel /home/runner/work/_actions/eWloYW8/amlogic-s9xxx-armbian/main/compile-kernel/kernel
+          ln -sf /builder/compile-kernel/output /home/runner/work/_actions/eWloYW8/amlogic-s9xxx-armbian/main/compile-kernel/output
 
           # Pull the Armbian Docker image
           docker run -d --privileged \
@@ -191,7 +192,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile the kernel [ ${{ inputs.kernel_version }} ]
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: eWloYW8/amlogic-s9xxx-armbian@main
         if: ${{ steps.pull.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: kernel
