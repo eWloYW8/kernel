@@ -13,9 +13,10 @@ on:
       kernel_source:
         description: "Select the kernel source"
         required: false
-        default: "unifreq"
+        default: "eWloYW8"
         type: choice
         options:
+          - eWloYW8
           - unifreq
           - codesnas
       kernel_version:
