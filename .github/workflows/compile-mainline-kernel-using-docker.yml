@@ -17,6 +17,7 @@ on:
         type: choice
         options:
           - eWloYW8
+          - yoolc
           - unifreq
           - codesnas
       kernel_version:
@@ -89,6 +90,8 @@ on:
         type: choice
         options:
           - -ophub
+          - -eWloYW8
+          - -yoolc
           - -happy-new-year
           - -dragon-boat-festival
           - -mid-autumn-festival
